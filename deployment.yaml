@@ -1,32 +1,32 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: wil-playground
+  name: gdoubrem-playground
   namespace: dev
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: wil-playground
+      app: gdoubrem-playground
   template:
     metadata:
       labels:
-        app: wil-playground
+        app: gdoubrem-playground
     spec:
       containers:
-      - name: wil-playground
-        image: wil42/playground:v1
+      - name: gdoubrem-playground
+        image: gdoubrem/playground:v1
         ports:
         - containerPort: 8888
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: wil-playground
+  name: gdoubrem-playground
   namespace: dev
 spec:
   selector:
-    app: wil-playground
+    app: gdoubrem-playground
   ports:
   - port: 8888
     targetPort: 8888
